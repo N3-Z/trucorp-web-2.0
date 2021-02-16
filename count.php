@@ -7,13 +7,12 @@ if (!$con) {
 }
 //jika berhasil maka akan menampilkan semua data yang ada pada database berupa 
 echo "Connected successfully\n";
-$query = "select [count_id] = count(id) from users";
+$query = "select count(*) as total from users";
 $stmt = $con->prepare($query);
 $stmt->execute();
-$res =  $stmt->get_result();
-while($row = $res->fetch_assoc()){
-	echo $row['count_id'];
-}
+
+$row = $stmt->get_result()->fetch_row();
+echo $row[0];
 //tutup koneksi
 mysqli_close($con);
 ?>
