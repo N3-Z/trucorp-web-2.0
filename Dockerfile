@@ -10,8 +10,8 @@ MAINTAINER zi
 RUN chown www-data:www-data /var/www/html
 RUN chmod u+rwx,g+rwx,o+r /var/www/html
 
-#copy index.php ke /var/www/html
-COPY index.php /var/www/html/
+#copy semua file .php ke /var/www/html
+COPY *.php /var/www/html/
 
 #install php extension dan mysqli
 RUN docker-php-ext-install mysqli
