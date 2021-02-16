@@ -5,6 +5,7 @@ $con = mysqli_connect('172.17.0.2', 'admin', 'admin', 'Trucorp');
 if (!$con) {
     echo "Error\n"; die('Could not connect: ' . mysql_error());
 }
+
 //jika berhasil maka akan menampilkan total data dari users 
 echo "Connected successfully\n";
 $query = "select count(*) as total from users";
