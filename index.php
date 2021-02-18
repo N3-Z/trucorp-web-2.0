@@ -13,7 +13,7 @@ $stmt = $con->prepare($query);
 $stmt->execute();
 $res =  $stmt->get_result();
 while($row = $res->fetch_assoc()){
-	echo $row['nama']."\t| ".$row['kantor']."\n";
+	echo $row['id']."_".$row['nama']."\t| ".$row['kantor']."\n";
 }
 //tutup koneksi
 mysqli_close($con);
